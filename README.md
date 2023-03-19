@@ -1,9 +1,9 @@
 # MyCMS
 <p>Tool for creating fast web systems (https://cms.chebros.com/ru/).
-<p>Setup: unpack ZIP file to folder "/setup" on hosting or local server ("OpenLiteSpeed" or "Apache").
+<p>Setup: unpack ZIP file to folder ("/setup") on hosting or local server ("OpenLiteSpeed" or "Apache").
 <hr>
 <p>Инструмент для создания быстрых веб-систем (https://cms.chebros.com/ru/).
-<p><b>Устрановка</b>: распаковать ZIP-файл в папку "/setup" на хостинге или локальном сервере ("OpenLiteSpeed" или "Apache").
+<p><b>Устрановка</b>: распаковать ZIP-файл (в папку "/setup") на хостинге или локальном сервере ("OpenLiteSpeed" или "Apache").
 <ul style="font-size:80%">
  <li>Открыть страницу "/setup/", пройти авторизацию (логин и пароль — указанные в начале файла "index.php"), указать желаемые параметры конфигурации в форме,  нажать кнопку "Применить".
  <li>Выполнение пошаговое: отображается результат и кнопка для выполнения следующего шага.
