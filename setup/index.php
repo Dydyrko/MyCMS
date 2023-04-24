@@ -52,7 +52,7 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 			}
 			$A=array(
 				'<?php'
-				."\n".'if(empty($root)){require $_SERVER[\'DOCUMENT_ROOT\'].\'/1/core/404.php\';};'
+				."\n".'if(empty($root)){exit;};'
 				."\n".'$Conf=array('."\n",
 				implode(','."\n",$A),
 				"\n".');'
@@ -160,8 +160,19 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 				for($i=0;$i<$zip->numFiles;$i++){	//сохранить даты файлов
 					touch($root.'/'.$zip->statIndex($i)['name'], $zip->statIndex($i)['mtime']);
 				}
+				echo '<p>cms.zip unpacked';
 				$zip->close();
-				echo 'ZIP unpacked';
+				$zip2=new ZipArchive;
+				$file=$root.'/setup/help.zip';
+				if($zip2->open($file)===TRUE){
+					$zip2->extractTo($root.'/help/1/');
+					for($i=0;$i<$zip2->numFiles;$i++){	//сохранить даты файлов
+						touch($root.'/help/1/'.$zip2->statIndex($i)['name'], $zip2->statIndex($i)['mtime']);
+					}
+					$zip2->close();
+					echo '<p>help.zip unpacked';
+				}
+
 				if(copy($root.'/setup/1/conf.php',$root.'/1/conf.php')){
 					$L=array('en'=>'Configuration file copied',
 						'uk'=>'Файл конфігурації скопійовано',
@@ -191,7 +202,6 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 					'ru'=>'Ошибка распаковки файла');
 				echo '<p class=err>'.$L[$lang].': '.$file;
 			}
-
 			exit;
 		}else if(isset($_POST['CMS']) && $_POST['CMS']=='addPerson'){
 			$start=microtime(true);
