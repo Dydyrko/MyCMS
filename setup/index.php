@@ -160,17 +160,18 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 				for($i=0;$i<$zip->numFiles;$i++){	//сохранить даты файлов
 					touch($root.'/'.$zip->statIndex($i)['name'], $zip->statIndex($i)['mtime']);
 				}
-				echo '<p>cms.zip unpacked';
+				echo '<p>cms.zip unpacked</p>';
 				$zip->close();
 				$zip2=new ZipArchive;
 				$file=$root.'/setup/help.zip';
+				if(!file_exists($file)){exit($file.' not exists');}
 				if($zip2->open($file)===TRUE){
 					$zip2->extractTo($root.'/help/1/');
 					for($i=0;$i<$zip2->numFiles;$i++){	//сохранить даты файлов
 						touch($root.'/help/1/'.$zip2->statIndex($i)['name'], $zip2->statIndex($i)['mtime']);
 					}
 					$zip2->close();
-					echo '<p>help.zip unpacked';
+					echo '<p>help.zip unpacked</p>';
 				}
 
 				if(copy($root.'/setup/1/conf.php',$root.'/1/conf.php')){
