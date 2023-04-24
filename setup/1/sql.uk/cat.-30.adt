@@ -1,0 +1,11 @@
+-100	0	10	header
+
+<a href="/" style="display:inline-block;line-height:44px">Logo</a>
+<div style="float:right">
+	<span class="noedit" data-t="langSwitch">{langSwitch}</span>
+	<div class="noedit" id="headerDiv"></div>
+</div>
+
+<a id="arrowUp" onclick="document.documentElement.scrollIntoView(
+	{behavior: 'smooth'}
+)">&uarr;</a>

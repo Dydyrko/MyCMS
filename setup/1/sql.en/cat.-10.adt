@@ -1,0 +1,18 @@
+-100	0	2	LogIn
+
+<div class="LogIn">
+	<form {onsubmit} style=margin-bottom:30px>
+		<h2>Authorization</h2>
+		<div>
+			<input {login} placeholder="Login" autofocus
+			><div class=psw style="display:none"
+			 onclick="pswClick(this,qNewPsw)"
+			 ><input {psw} placeholder="Password" title="Button left — view password,
+ right — request access to e-mail"
+			 ><div></div>
+			</div>		
+		</div>
+		<div></div
+	></form>
+	<a {registration}">Registration</a>
+</div>

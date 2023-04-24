@@ -1,0 +1,15 @@
+-100	0	11	footer
+<div class="logo">
+	<a href="/">
+		Logo
+	</a>
+	<h2>Footer</h2>
+</div>
+<a class="btn" onclick="ajx(event,'feedback',
+	textContent,0,
+	['jsAppend(\'feedback\',1)','window.feedTimer=window.setTimeout(\'document.querySelector(\\\'.feedback label>input\\\').focus()\',2000)']
+	)">
+	Feedback
+</a>
+
+<div style=clear:both></div>

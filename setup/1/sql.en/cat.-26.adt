@@ -1,0 +1,19 @@
+-100	0	3	Texts of registration and authorization processes
+#regOK
+A message to complete registration has been sent to your email
+#mxNotFound
+Mail server not found
+#mailErr
+Invalid mailing address
+#memSubject
+Link to new password form
+#memPsw
+An access message has been sent to the specified e-mail address
+#auErr
+Password input error
+#memGet
+Forgot password 
+#memSent
+An access message has been sent to the specified e-mail address
+#mailExist
+already registered by e-mail
