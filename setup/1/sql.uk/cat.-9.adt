@@ -1,0 +1,7 @@
+-100	0	1	Реєстрація
+<div><input name="name" placeholder="Ваше ім'я" required="1"></div>
+<div><input name="mail" placeholder="Ваш E-mail" required="1" onblur="/*regTest(event,this)*/" type="text"><div></div></div>
+
+{captcha}
+
+<p><button>Зареєструватися</button>

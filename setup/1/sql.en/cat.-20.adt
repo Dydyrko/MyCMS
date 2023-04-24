@@ -1,0 +1,7 @@
+-100	0	133	feedback
+<p>Thank you for your message,
+  In the near future the manager will try to contact you.
+</p>
+<a class="btn a" style="margin: auto; display: block;"
+  onclick="var e=parentNode.nextSibling;
+e.style.display=e.style.display!='none'?'none':'block'">Show your message</a>

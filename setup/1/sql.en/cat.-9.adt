@@ -1,0 +1,7 @@
+-100	0	1	Registration
+<div><input name="name" placeholder="Your name" required="1"></div>
+<div><input name="mail" placeholder="Your E-mail" required="1" onblur="/*regTest(event,this)*/" type="text"><div></div></div>
+
+{captcha}
+
+<p><button>Registration</button>

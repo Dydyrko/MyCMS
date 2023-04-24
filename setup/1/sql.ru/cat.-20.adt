@@ -1,0 +1,7 @@
+-100	0	133	feedback
+<p>Благодарим за сообщение,
+ в ближайшее время менеджер постарается с Вами связаться.
+</p>
+<a class="btn a" style="margin: auto;display: block;"
+ onclick="var e=parentNode.nextSibling;
+e.style.display=e.style.display!='none'?'none':'block'">Показать Ваше сообщение</a>

@@ -1,0 +1,15 @@
+-100	0	133	feedback
+<form class=feedback onsubmit="return Feedback(this)">
+	<input name=feedback value="Оставити заявку" type=hidden>
+	<label><input name=name required><div>Ваше ім'я</div></label>
+
+	<label><input type=text class="tel err"
+		 placeholder="+380 (__) ___-__-__"><div>Телефон</div>
+		<input name=tel type=hidden>		
+	</label>
+
+	<label><input name=mail required><div>Email</div></label>
+	<label><textarea name=text></textarea><div>Коментарі</div></label>
+	{captcha}
+	<button>Надіслати</button>
+<div></div></form>

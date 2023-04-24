@@ -1,0 +1,17 @@
+-100	0	2	Вхід
+<div class="LogIn">
+	<form {onsubmit} style=margin-bottom:30px>
+		<h2>Вхід</h2>
+		<div>
+			<input {login} placeholder="Логін" autofocus
+			><div class=psw style="display:none"
+			 onclick="pswClick(this,qNewPsw)"
+			 ><input {psw} placeholder="Пароль" title="Кнопка зліва — показати/скрити пароль,
+ справа — запросити доступ на e-mail"
+			 ><div></div>
+			</div>		
+		</div>
+		<div></div
+	></form>
+	<a {registration}">Реєстрація</a>
+</div>
