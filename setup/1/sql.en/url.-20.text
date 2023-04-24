@@ -1,0 +1,14 @@
+-100	0	133	feedback
+<form class=feedback onsubmit="return Feedback(this)">
+	<input name=feedback value="Feedback" type=hidden>
+	<h2>Feedback</h2>
+	<label><input name=name required><div>Your name</div></label>
+	<label><input type=text class="tel err"
+		 placeholder="+380 (__) ___-__-__"><div>Phone</div>
+		<input name=tel type=hidden>		
+	</label>
+	<label><input name=mail required><div>Mail</div></label>
+	<label><textarea name=text></textarea><div>Note</div></label>
+	{captcha}
+	<button>Send</button>
+<div></div></form>
