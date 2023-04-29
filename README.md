@@ -4,7 +4,7 @@
 <p>Setup: place folder ("/setup") to hosting or local server ("OpenLiteSpeed" or "Apache").
 <hr>
 <p>Инструмент для создания быстрых веб-систем:
-<a href="https://github.com/Dydyrko/MyCMS/blob/main/setup/help.zip" target="_blank">справочник</a> и
+<a href="https://github.com/Dydyrko/MyCMS/blob/main/setup/help.zip" target="_blank">справочник</a> (открывать index.html) и
 <a href="https://cms.chebros.com/ru/" target="_blank">описание</a>
  (<a href="http://2298547.cheb2.web.hosting-test.net/ru/" target="_blank">резервная ссылка</a>).
 <p><b>Устрановка</b>: поместить папку "/setup" на хостинг или локальный сервер ("OpenLiteSpeed" или "Apache").
