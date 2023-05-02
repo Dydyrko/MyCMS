@@ -8,12 +8,12 @@
 				if(strlen($v)!=2){exit('<p>Lang code «'.$v.'» must be two characters [a-z]');}
 				if($i==0){
 					$q.='
-					,`text` text NOT NULL
+					,`text` mediumtext NOT NULL
 					,`meta` text NOT NULL
 					,`url` varchar(255) DEFAULT NULL';
 				}else{
 					$q.='
-					,`text_'.$v.'` text NOT NULL
+					,`text_'.$v.'` mediumtext NOT NULL
 					,`meta_'.$v.'` text NOT NULL
 					,`url_'.$v.'` varchar(255) DEFAULT NULL';
 				}
