@@ -29,7 +29,7 @@ echo
 			$Conf=[
 				'TITLE'=>'Site_name',
 				'Langs'=>['uk','ru','en'],
-				'adminLang'=>'en',
+				//'adminLang'=>'en',
 				'geoLoc'=>'',
 				'HOST'=>'localhost',
 				'NAME_BD'=>'',
@@ -71,7 +71,7 @@ echo
 			$T=array(
 				'TITLE'=>'Имя сайта',
 				'Langs'=>'Двух-буквенные коды языков через запятую, первый язык — основной',
-				'adminLang'=>'Код языка административной панели, если пусто — выбранный язык сайта',
+				//'adminLang'=>'Код языка административной панели, если пусто — выбранный язык сайта',
 				'geoLoc'=>'Использовать геолокацию',
 				'HOST'=>'Сервер MySQL: «localhost» или как указано хостингом сервера',
 				'USER'=>'Пользователь базы данных MySQL: можеть быть «root» для локального сервера (например, «OpenServer»)',
@@ -82,7 +82,7 @@ echo
 			$T = array (
 				'TITLE'=>'Ім\'я сайту',
 				'Langs'=>'Двобуквенні коди мов через кому, перша мова - основна',
-				'adminLang'=>'Код мови адміністративної панелі, якщо порожньо — вибрана мова сайту',
+				//'adminLang'=>'Код мови адміністративної панелі, якщо порожньо — вибрана мова сайту',
 				'geoLoc'=>'Використовувати геолокацію',
 				'HOST'=>'Сервер MySQL: «localhost» або як зазначено хостингом сервера',
 				'USER'=>'Користувач бази даних MySQL: може бути «root» для локального сервера (наприклад, «OpenServer»)',
@@ -93,7 +93,7 @@ echo
 			$T=array(
 				'TITLE'=>'Site name',
 				'Langs'=>'Two-letter language codes separated by commas, first language is primary',
-				'adminLang'=>'The language code of the administrative panel, if empty — the selected language of the site',
+				//'adminLang'=>'The language code of the administrative panel, if empty — the selected language of the site',
 				'geoLoc'=>'Use geolocation',
 				'HOST'=>'MySQL Server: «localhost» or as specified by server host',
 				'USER'=>'MySQL database user: can be «root» for local server (e.g. «OpenServer»)',
@@ -103,6 +103,7 @@ echo
 
 		}
 		foreach($Conf as $i=>$v){
+			if(!isset($T[$i])){continue;}	//'adminLang' возможно будет
 			echo
 			'<tr title="'.$T[$i].'"><td>'.$i.'<td><input name="'.$i.'" value="'.(is_array($v)?implode(', ',$v):$v).'"'
 				.($i=='PASSWORD'?' type="password" placeholder="PASSWORD" autocomplete="off" ondblclick="(type==`password`?type=`text`:type=`password`)"':'')
