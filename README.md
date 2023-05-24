@@ -1,12 +1,9 @@
 # MyCMS
-<p>Tool for creating fast web systems: <a href="https://cms.chebros.com/en/" target="_blank">description</a>
- (<a href="http://2298547.cheb2.web.hosting-test.net/en/" target="_blank">reserve link</a>).
+<p>Tool for creating fast web systems: <a href="https://cms.chebros.com/en/" target="_blank">description</a>.
 <p>Setup: place folder ("/setup") to hosting or local server ("OpenLiteSpeed" or "Apache").
 <hr>
-<p>Инструмент для создания быстрых веб-систем:
-<a href="https://github.com/Dydyrko/MyCMS/blob/main/setup/help.zip" target="_blank">справочник</a> (открывать index.html) и
-<a href="https://cms.chebros.com/ru/" target="_blank">описание</a>
- (<a href="http://2298547.cheb2.web.hosting-test.net/ru/" target="_blank">резервная ссылка</a>).
+<p>Инструмент для создания быстрых веб-систем: <a href="https://cms.chebros.com/ru/" target="_blank">описание</a>.
+ <br><a href="https://github.com/Dydyrko/MyCMS/blob/main/setup/help.zip" target="_blank">Справочник</a> в ZIP-архиве — часть CMS.
 <p><b>Устрановка</b>: поместить папку "/setup" на хостинг или локальный сервер ("OpenLiteSpeed" или "Apache").
 <ul style="font-size:80%">
  <li>Если установка не на локальный сервер — создать пустую базу данных на хостинге.
