@@ -1,6 +1,6 @@
 -100	0	10	header
 
-<a href="/" style="display:inline-block;line-height:44px">Logo</a>
+<a href="/" style="display:inline-block;line-height:40px">Logo</a>
 <div style="float:right">
 	<div class="noedit" id="headerDiv"></div>
 </div>
