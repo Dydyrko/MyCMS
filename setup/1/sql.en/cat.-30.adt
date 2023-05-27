@@ -2,7 +2,6 @@
 
 <a href="/en/" style="display:inline-block;line-height:44px">Logo</a>
 <div style="float:right">
-	<span class="noedit" data-t="langSwitch">{langSwitch}</span>
 	<div class="noedit" id="headerDiv"></div>
 </div>
 
