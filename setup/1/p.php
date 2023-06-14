@@ -62,8 +62,8 @@ echo
 		.' onclick="
 			var e=event.target;
 			if(typeof(e.value)==\'undefined\'){e.value=\'\';}
-			if(e.type==\'checkbox\'){e.dataset.h=e.value.hashCode();e.value=e.checked;}else
-			if(e.name){e.dataset.h=e.value.hashCode()}
+			if(e.name){e.dataset.h=e.value.hashCode();}
+			if(e.type==\'checkbox\'){e.value=e.checked;}
 		"'
 	.'>'
 		.'<table>';
