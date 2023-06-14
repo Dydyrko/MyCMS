@@ -70,7 +70,7 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 				exit('<p class=err>'.$E['message']);
 			}
 		}
-		//if(!file_exists($_SERVER["DOCUMENT_ROOT"].'/setup/1/conf.php')){exit('config ?');}
+		if(!file_exists($_SERVER["DOCUMENT_ROOT"].'/setup/1/conf.php')){exit('config ?');}
 
 		if(isset($_POST['CMS']) && $_POST['CMS']=='delTables'){	//удаление таблиц из БД (перед установкой)
 			$start=microtime(true);
@@ -249,15 +249,15 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 				if($lang=='ru'){
 					echo '<p>На сайт добавлена учётная запись администратора сайта.'
 					.'<p style="color:#999">Можно добавить ещё администраторов сайта'
-					.'<p><a href=/'.$lang.'/admin>Перейти в административную часть сайта</a>';
+					.'<p><a href=/admin>Перейти в административную часть сайта</a>';	//href=/'.$lang.'/admin сайт может этого языка не содержать
 				}else if($lang=='uk'){
 					echo '<p>На сайт додано обліковий запис адміністратора сайту.'
 					.'<p style="color:#999">Можна додати ще адміністраторів сайту'
-					.'<p><a href=/'.$lang.'/admin>Перейти до адміністративної частини сайту</a>';
+					.'<p><a href=/admin>Перейти до адміністративної частини сайту</a>';
 				}else{
 					echo '<p>The site administrator account has been added to the site.'
 					.'<p style="color:#999">You can add more site administrators'
-					.'<p><a href=/'.$lang.'/admin>Go to the administrative part of the site</a>';
+					.'<p><a href=/admin>Go to the administrative part of the site</a>';
 				}
 				echo '<div style="color: #777;text-align: right;">(login and password "1" — to block search engines until completion of the site development)</div>';
 			}else{
@@ -332,7 +332,7 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 							'uk'=>'Перейти до адміністративної частини сайту',
 							'ru'=>'Перейти в административную часть сайта');
 						echo
-						': '.$row['c'].'<div><a href="/'.$lang.'/admin">'.$L[$lang].'</a></div>'
+						': '.$row['c'].'<div><a href="/admin">'.$L[$lang].'</a></div>'	//href="/'.$lang.'/admin сайт может этого языка не содержать
 						.'<div style="color: #777;text-align: right;">(login and password "1" — to block search engines until completion of the site development)</div>'
 						.'</div>';
 					}
