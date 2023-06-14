@@ -70,6 +70,7 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 				exit('<p class=err>'.$E['message']);
 			}
 		}
+		//if(!file_exists($_SERVER["DOCUMENT_ROOT"].'/setup/1/conf.php')){exit('config ?');}
 
 		if(isset($_POST['CMS']) && $_POST['CMS']=='delTables'){	//удаление таблиц из БД (перед установкой)
 			$start=microtime(true);
@@ -271,7 +272,10 @@ if(isset($_GET['ajx'])){	//выполнение аякс-запросов
 		require $root.'/setup/1/class.db.php';	//получаем $Conf
 
 		$dirSQL=$root.'/setup/1/sql.'.$Langs[0];
-		if(!file_exists($dirSQL)){exit('SQL folder? First lang «'.$Langs[0].'» not in: ru, uk, en');}
+		if(!file_exists($dirSQL)){
+			$dirSQL=$root.'/setup/1/sql.en';
+			//exit('SQL folder? First lang «'.$Langs[0].'» not in: ru, uk, en');
+		}
 
 							//класс DB понадобится после попытки создать базу данных её при отсутствии
 		$conn=mysqli_init();			//подключимся к серверу MySQL без указания базы данных
