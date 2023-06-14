@@ -124,6 +124,8 @@ echo
 		)
 	);
 	if(!isset($L[$Langs[0]])){$L[$Langs[0]]=$L['en'];}
+	foreach($Langs as $i=>$v){if(!isset($L[$v])){$L[$v]=$L['en'];}}
+
 	$q='INSERT INTO `cat` '		//страницы без текстов
 		.'(`id`,	`parent`,	`v`,	`ord`,	`name`)
 		VALUES '	
@@ -153,10 +155,10 @@ echo
 	}else{exit('<li class=err>'.DB::info());}
 
 	if(isset($Langs[1])){	//несколько языков: добавим имена страниц на этих языках к вставленным записям без текстов
-		foreach($L['ru'] as $i=>$v){
+		foreach($L['en'] as $i=>$v){
 			$A=array();
 			foreach($Langs as $i1=>$v1){
-				if($i1==0){continue;}
+				if($i1==0){continue;}	//основной язык
 				$A[]='name_'.$v1.'="'.$L[$v1][$i].'"';
 			}
 			$q='update cat set '.implode(',',$A).' where id='.$i;
