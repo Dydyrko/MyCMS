@@ -3,7 +3,7 @@
 <form class=newPsw onsubmit="ajxFormData(event,this,['if(txt[0]==\' \'){div=form.lastChild}']);return false">
 	
 	Запросить на e-mail
-	<input name=login readonly style="display:block;border:none;text-align:center;width:auto" value="">
+	<input name=core_login readonly style="display:block;border:none;text-align:center;width:auto" value="">
 	одноразовую ссылку доступа
 
 	<div style="margin:20px 0">
