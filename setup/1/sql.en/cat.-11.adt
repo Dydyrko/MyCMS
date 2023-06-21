@@ -3,7 +3,7 @@
 <form class=newPsw onsubmit="ajxFormData(event,this,['if(txt[0]==\' \'){div=form.lastChild}']);return false">
 	
 	Request a one-time access link by e-mail
-	<input name=login readonly style="display:block;border:none;text-align:center;width:auto" value="">
+	<input name=core_login readonly style="display:block;border:none;text-align:center;width:auto" value="">
 
 	<div style="margin:20px 0">
 		<img data-i=0 data-s="/?img=captcha&id=3&txt=" src="/?img=captcha&id=3&txt=0"
