@@ -31,7 +31,7 @@ echo
 				'Langs'=>['uk','ru','en'],
 				//'adminLang'=>'en',
 				'geoLoc'=>'',
-				'HOST'=>'localhost',
+				'HOST'=>'127.0.0.1',
 				'NAME_BD'=>'',
 				'USER'=>'root',
 				'PASSWORD'=>'root'
