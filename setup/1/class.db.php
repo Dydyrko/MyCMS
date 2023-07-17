@@ -1,8 +1,10 @@
 <?php
-if(empty($root)){require $_SERVER['DOCUMENT_ROOT'].'/1/core/404.php';};
+if(empty($root)){require $_SERVER['DOCUMENT_ROOT'].'/1/core/404.php';};	//если прямой вызов: альтернатива "Deny from all" в .htaccess папки "/1"
 
-require $root.'/setup/1/conf.php';
+require $root.'/1/conf.php';
 $Langs=$Conf['Langs'];
+
+$DbLog=array();
 class DB{
 	protected static $_instance;
 	public static function getInstance() {
@@ -12,14 +14,12 @@ class DB{
 	private  function __construct() {
 		global $Conf;
 		$this->connect = mysqli_connect($Conf['HOST'],$Conf['USER'],$Conf['PASSWORD'],$Conf['NAME_BD']) or exit('<p>'.mysqli_connect_error());
-		if (!mysqli_set_charset($this->connect, "utf8")){exit(mysqli_error($this->connect));}
-		//mysqli_query($this->connect,'SET names "utf8"'); 
-		mysqli_query($this->connect,'SET sql_mode = "ERROR_FOR_DIVISION_BY_ZERO"'); 
+		//if(!mysqli_set_charset($this->connect, "utf8mb4")){exit(mysqli_error($this->connect));}
+		mysqli_query($this->connect,'SET sql_mode = "NO_DIR_IN_CREATE"');
+		mysqli_query($this->connect,'SET time_zone = "'.date_default_timezone_get().'"');
 	}
-	//private function __clone() {}       
-	//public function __wakeup() {}   
 	public static function q($sql) {
-		global $root;
+		global $root,$DbLog;
 		if(empty($root)){$root=$_SERVER['DOCUMENT_ROOT'];}
 		$obj=self::$_instance;       
 		if(isset($obj->connect)){
@@ -49,9 +49,9 @@ class DB{
 					if($n!==false){$v=substr($v,$n);}
 					$B[]=$i.'='.str_replace($root,'',$v);
 				}
-				if(!file_exists($tmp)){mkdir($tmp);}
 				$s=($obj->count_sql==1?date("Y.m.d H:i:s").' '.$_SERVER['REQUEST_URI']."\n":'').$obj->count_sql."\t".$time_sql."\t".str_replace(array("\n","\t"),' ',$sql)."\t".implode(', ',$B);
-				file_put_contents($tmp.'/db.txt',$s."\n",FILE_APPEND);
+				//if(!file_exists($tmp)){mkdir($tmp);}file_put_contents($tmp.'/db.txt',$s."\n",FILE_APPEND);
+				$DbLog[]=$s;
 			}               
 			return $result;
 		}
@@ -68,8 +68,8 @@ class DB{
 
         public static function insert_id(){return mysqli_insert_id(self::$_instance->connect);}
         public static function affected_rows(){return mysqli_affected_rows(self::$_instance->connect);}
-        //public static function info(){return mysqli_info(self::$_instance->connect);}
-	public static function info(){return @mysqli_info(self::$_instance->connect);}
+        public static function info(){return mysqli_info(self::$_instance->connect);}
+	//public static function info(){return @mysqli_info(self::$_instance->connect);}
 
         public static function esc($str){
 		$obj=self::$_instance;       
