@@ -2,7 +2,7 @@ id	cat	name		text		ord	v
 1	-10	hide.svg	hide.svg	1	0
 2	-10	view.svg	view.svg	2	0
 3	-30	close.png	close.png	1	0
-4	-30	user.png	user.png	1	0
+4	-30	user.svg	user.svg	1	0
 5	-30	exit.png	exit.png	1	0
 6	-30	logo.svg	logo.svg	2	0
 7	-30	logo-og.svg	logo-og.svg	2	0
