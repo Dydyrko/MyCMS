@@ -1,21 +1,12 @@
 -26	0	1	Запрос нового пароля
 <h2>Forgot your password?</h2>
 <form class=newPsw onsubmit="ajxFormData(event,this,['if(txt[0]==\' \'){div=form.lastChild}']);return false">
-	
+<div style="margin-bottom:15px">	
 	Request a one-time access link by e-mail
-
 	<input name=core_login value="" readonly
 	 style="display:block;border:none;width:100%;margin:5px 0;text-align:center;font-size:16px">
-
-	<div style="margin:20px 0">
-		<input name=captcha type=text placeholder="Captcha" required>
-		←
-		<img data-i=0 data-s="/?img=captcha&id=3&txt="
-		 src="/?img=captcha&id=3&txt=0"
-		 alt="Captcha" title="Captcha: refresh"
-		 onclick="dataset.i=dataset.i*1+.1;src=dataset.s+dataset.i">
-	</div>	
-	
+</div>
+{captcha}
 	<button>Request</button>
 	<input name="newPsw" type=hidden>
 	<div></div>
