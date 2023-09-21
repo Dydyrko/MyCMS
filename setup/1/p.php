@@ -9,14 +9,19 @@ echo
 '<!doctype html>'
 .'<title>'.$L[$lang].'</title>'	//Установка CMS
 //.'<link type="image/png" rel="shortcut icon" href="/favicon.png" />'
+//.'<link rel="stylesheet" type="text/css" href="/setup/css/ajx.css">'
 .'<script src=js/ajx.js></script>'
 .'<style>
 	a{color:#00f;cursor:pointer}
 	a:hover{color:#f30;}
 	.log{display:inline-block;max-width: calc(100% - 15px);max-height:300px;overflow:auto;border:inset;padding:0 5px}
 	.err{color:red}
+	.ajxT{margin:5px}'	/*t.gif*/.'
+	progress{display:block;width:calc(100% - 10px);height:14px;overflow:hidden;position:fixed;z-index:9;bottom:1px;left:0;transition:bottom .5s;}
+	progress[value="0"]{bottom:-50px}
 </style>'
 .'<body data-conf="'.(file_exists($file)?1:0).'">'
+.'<progress value="0"></progress>'
 .'<div style="max-width:800px;margin:auto">'
 	.'<form style=float:right><select name=lang onchange="form.submit()">'
 		.'<option'.($lang=='en'?' selected':'').'>en'
