@@ -1,6 +1,10 @@
 <?php
-
 $L=array('en'=>'CMS setup','uk'=>'Встановлення CMS','ru'=>'Установка CMS');
+		$file=$_SERVER["DOCUMENT_ROOT"].'/setup/1/conf.php';
+		if(file_exists($file)){
+			require $file;
+		}
+
 echo
 '<!doctype html>'
 .'<title>'.$L[$lang].'</title>'	//Установка CMS
@@ -12,7 +16,7 @@ echo
 	.log{display:inline-block;max-width: calc(100% - 15px);max-height:300px;overflow:auto;border:inset;padding:0 5px}
 	.err{color:red}
 </style>'
-.'<body>'
+.'<body data-conf="'.(file_exists($file)?1:0).'">'
 .'<div style="max-width:800px;margin:auto">'
 	.'<form style=float:right><select name=lang onchange="form.submit()">'
 		.'<option'.($lang=='en'?' selected':'').'>en'
@@ -21,10 +25,7 @@ echo
 	.'</select></form>'
 	.'<h1>'.$L[$lang].'</h1>'	//Установка CMS
 	.'<h2>';
-		$file=$_SERVER["DOCUMENT_ROOT"].'/setup/1/conf.php';
-		if(file_exists($file)){
-			require $file;
-		}
+
 		if(empty($Conf)){
 			$Conf=[
 				'TITLE'=>'Site_name',
@@ -56,8 +57,8 @@ echo
 					}
 				}
 			}
-			if(!b && '.(file_exists($root.'/1/conf.php')?1:0).'){return ajx(event,\'CMS\',0,nextSibling)}'	//изменений формы не было и есть файл конфигурации
-		.'return ajxFormData(event,this,0,nextSibling)'
+			if(!b && document.body.dataset[\'conf\']==1){return ajx(event,\'CMS\',0,nextSibling)}'	//изменений формы не было и есть файл конфигурации
+		.'return ajxFormData(event,this,function(){document.body.dataset[\'conf\']=1},nextSibling)'
 		.'"'
 		.' onclick="
 			var e=event.target;
