@@ -19,6 +19,7 @@ if($row['c']>0){
 		'ru'=>'Перейти в административную часть сайта');
 	echo
 	': '.$row['c'].'<div><a href="/admin">'.$L[$lang].'</a></div>'	//href="/'.$lang.'/admin сайт может этого языка не содержать
-	.'<div style="color: #777;text-align: right;">(login and password "1" — to block search engines until completion of the site development)</div>'
+	.$finalComment
+	//.'<div style="color: #777;text-align: right;">(login and password "1" — to block search engines until completion of the site development)</div>'
 	.'</div>';
 }

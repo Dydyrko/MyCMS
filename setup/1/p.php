@@ -56,7 +56,7 @@ echo
 					}
 				}
 			}
-			if(!b){return ajx(event,\'CMS\',0,nextSibling)}'
+			if(!b && '.(file_exists($root.'/1/conf.php')?1:0).'){return ajx(event,\'CMS\',0,nextSibling)}'	//изменений формы не было и есть файл конфигурации
 		.'return ajxFormData(event,this,0,nextSibling)'
 		.'"'
 		.' onclick="
@@ -75,7 +75,7 @@ echo
 				'geoLoc'=>'Использовать геолокацию',
 				'HOST'=>'Сервер MySQL: «localhost» или как указано хостингом сервера',
 				'USER'=>'Пользователь базы данных MySQL: можеть быть «root» для локального сервера (например, «OpenServer»)',
-				'PASSWORD'=>'Пароль пользователя базы данных MySQL: можеть быть пустым для «root»',
+				'PASSWORD'=>'Пароль пользователя базы данных MySQL: нажатие на заголовок переключает отображение',
 				'NAME_BD'=>'Имя базы данных MySQL: можеть быть создана при достаточных правах пользователя базы данных, иначе — должна существовать.'
 			);
 		}else if($lang=='uk'){
@@ -86,7 +86,7 @@ echo
 				'geoLoc'=>'Використовувати геолокацію',
 				'HOST'=>'Сервер MySQL: «localhost» або як зазначено хостингом сервера',
 				'USER'=>'Користувач бази даних MySQL: може бути «root» для локального сервера (наприклад, «OpenServer»)',
-				'PASSWORD'=>'Пароль користувача бази даних MySQL: може бути порожнім для «root»',
+				'PASSWORD'=>'Пароль користувача бази даних MySQL: натискання на заголовок перемикає відображення',
 				'NAME_BD'=>'Ім\'я бази даних MySQL: може бути створена при достатніх правах користувача бази даних, інакше — має існувати.'
 			);
 		}else{
@@ -96,8 +96,8 @@ echo
 				//'adminLang'=>'The language code of the administrative panel, if empty — the selected language of the site',
 				'geoLoc'=>'Use geolocation',
 				'HOST'=>'MySQL Server: «localhost» or as specified by server host',
-				'USER'=>'MySQL database user: can be «root» for local server (e.g. «OpenServer»)',
-				'PASSWORD'=>'Mysql database user password: can be empty for «root»',
+				'USER'=>'MySQL database user: may be «root» for local server («OpenServer»)',
+				'PASSWORD'=>'Mysql database user password: clicking on the label toggles the display',
 				'NAME_BD'=>'MySQL database name: can be created with sufficient database user rights, otherwise it must exist.'
 			);
 
@@ -105,8 +105,10 @@ echo
 		foreach($Conf as $i=>$v){
 			if(!isset($T[$i])){continue;}	//'adminLang' возможно будет
 			echo
-			'<tr title="'.$T[$i].'"><td>'.$i.'<td><input name="'.$i.'" value="'.(is_array($v)?implode(', ',$v):$v).'"'
-				.($i=='PASSWORD'?' type="password" placeholder="PASSWORD" autocomplete="off" ondblclick="(type==`password`?type=`text`:type=`password`)"':'')
+			'<tr title="'.$T[$i].'"><td'
+				.($i=='PASSWORD'?' style="cursor:pointer;color:blue" onclick="let n=nextSibling.firstChild;if(n.type==`password`){n.type=`text`}else{n.type=`password`}"':'')
+			.'>'.$i.'<td><input name="'.$i.'" value="'.(is_array($v)?implode(', ',$v):$v).'"'
+				.($i=='PASSWORD'?' type="password" placeholder="PASSWORD" autocomplete="off"':'')
 				.($i=='geoLoc'?' type="checkbox"'.($v?' checked':''):'')
 				.(in_array($i,array('HOST','NAME_BD','USER'))?' required placeholder="'.$i.'"':'')
 			.'>';

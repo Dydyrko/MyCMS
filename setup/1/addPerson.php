@@ -41,18 +41,18 @@
 				$q='update cat set c=c+1 where id=-9';DB::q($q);
 				if($lang=='ru'){
 					echo '<p>На сайт добавлена учётная запись администратора сайта.'
-					.'<p style="color:#999">Можно добавить ещё администраторов сайта'
+					.'<p style="color:#999">Можно добавить ещё администраторов сайта — нажать кнопку формы «Применить»'
 					.'<p><a href=/admin>Перейти в административную часть сайта</a>';	//href=/'.$lang.'/admin сайт может этого языка не содержать
 				}else if($lang=='uk'){
 					echo '<p>На сайт додано обліковий запис адміністратора сайту.'
-					.'<p style="color:#999">Можна додати ще адміністраторів сайту'
+					.'<p style="color:#999">Можна додати ще адміністраторів сайту — натиснути кнопку форми «Застосувати»'
 					.'<p><a href=/admin>Перейти до адміністративної частини сайту</a>';
 				}else{
 					echo '<p>The site administrator account has been added to the site.'
-					.'<p style="color:#999">You can add more site administrators'
+					.'<p style="color:#999">You can add more site administrators — apply form'
 					.'<p><a href=/admin>Go to the administrative part of the site</a>';
 				}
-				echo '<div style="color: #777;text-align: right;">(login and password "1" — to block search engines until completion of the site development)</div>';
+				echo $finalComment; //'<div style="color: #777;text-align: right;">(if server ip not "127.0.0.1" — login and password "1" — to block search engines until completion of the site development: robots.txt filesize will become more than 30 bytes)</div>';
 			}else{
 				echo '<p class=err>'.DB::info();
 			};
