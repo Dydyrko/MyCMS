@@ -19,6 +19,16 @@ if(isset($_GET['lang'])){$lang=$_SESSION['lang']=$_GET['lang'];}
 if(!empty($_SESSION['lang'])){$lang=$_SESSION['lang'];}
 if(empty($lang)){$lang='en';}
 
+$finalComment='<div style="color: #777;text-align: right;">(';
+if($lang=='ru'){
+	$finalComment.='если ip сервера не «127.0.0.1»,<br> то логин и пароль «1» — для гарантированной<br> блокировки поисковых систем — пока<br> размер файла "robots.txt" менее 30 байт';
+}else if($lang=='uk'){
+	$finalComment.='якщо ip сервера не «127.0.0.1»,<br> то логін і пароль «1» — для гарантованого<br> блокування пошукових систем — поки<br> розмір файлу "robots.txt" менш 30 байт';
+}else{
+	$finalComment.='if the server ip is not “127.0.0.1”, then<br> the login and password are “1” — for<br> guaranteed blocking of search engines<br> while the "robots.txt" file size is less than 30 bytes';
+}
+$finalComment.=')</div>';
+
 if(isset($_GET['ajx'])	//выполнение аякс-запросов
  &&	(
 	isset($_POST['HOST'])		//выполнение формы конфигурации
