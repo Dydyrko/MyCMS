@@ -1,6 +1,7 @@
 <?php
 $L=array('en'=>'Create an admin account','uk'=>'Створити обліковий запис адміну','ru'=>'Создать учётную запись админа');
 echo
+'<style>input[name=mail]:invalid{color:red}</style>'.
 '<form onsubmit="
 	var e=elements,i;
 	for(i=0;i<e.length;i++){
@@ -13,7 +14,7 @@ echo
 " autocomplete="off">'
 	.'<input name=CMS value="addPerson" type=hidden>'
 	.'<table>'
-		.'<tr><td>E-mail<td><input name=mail autocomplete="off">'
+		.'<tr><td>E-mail<td><input name=mail type=mail pattern=".+@.+\..+" autocomplete="off">'
 		.'<tr><td style="cursor:pointer;color:blue"'
 			.' onclick="let n=nextSibling.firstChild;if(n.type==`password`){n.type=`text`}else{n.type=`password`}"'
 		.'>Password<td><input name=psw type=password autocomplete="new-password">'
