@@ -20,7 +20,7 @@
 	</div>
 </div>
 <div class="container">
-	<a href="/" style="display:inline-block;line-height:40px">Logo</a>
+	<a href="/en/" style="display:inline-block;line-height:40px">Logo</a>
 	<div style="float:right">
 		<div class="noedit" id="headerDiv"></div>
 	</div>
