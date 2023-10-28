@@ -33,12 +33,13 @@ echo
 
 		if(empty($Conf)){
 			$Conf=[
+				'Domain'=>'',
 				'TITLE'=>'Site_name',
 				'Langs'=>['uk','ru','en'],
 				//'adminLang'=>'en',
 				'geoLoc'=>'',
 				'HOST'=>'127.0.0.1',
-				'NAME_BD'=>'',
+				'DB'=>'',
 				'USER'=>'root',
 				'PASSWORD'=>'root'
 			];
@@ -82,7 +83,8 @@ echo
 				'HOST'=>'Сервер MySQL: «localhost» или как указано хостингом сервера',
 				'USER'=>'Пользователь базы данных MySQL: можеть быть «root» для локального сервера (например, «OpenServer»)',
 				'PASSWORD'=>'Пароль пользователя базы данных MySQL: нажатие на заголовок переключает отображение',
-				'NAME_BD'=>'Имя базы данных MySQL: можеть быть создана при достаточных правах пользователя базы данных, иначе — должна существовать.'
+				'DB'=>'Имя базы данных MySQL: можеть быть создана при достаточных правах пользователя базы данных, иначе — должна существовать.',
+				'Domain'=>'Каноническое доменное имя сайта (желательно указать при возможности других доменов: технического, для отладки…)'	//технический полезен при недоступности домена (на время продления…)
 			);
 		}else if($lang=='uk'){
 			$T = array (
@@ -93,7 +95,8 @@ echo
 				'HOST'=>'Сервер MySQL: «localhost» або як зазначено хостингом сервера',
 				'USER'=>'Користувач бази даних MySQL: може бути «root» для локального сервера (наприклад, «OpenServer»)',
 				'PASSWORD'=>'Пароль користувача бази даних MySQL: натискання на заголовок перемикає відображення',
-				'NAME_BD'=>'Ім\'я бази даних MySQL: може бути створена при достатніх правах користувача бази даних, інакше — має існувати.'
+				'DB'=>'Ім\'я бази даних MySQL: може бути створена при достатніх правах користувача бази даних, інакше — має існувати.',
+				'Domain'=>'Canonical domain'
 			);
 		}else{
 			$T=array(
@@ -104,7 +107,8 @@ echo
 				'HOST'=>'MySQL Server: «localhost» or as specified by server host',
 				'USER'=>'MySQL database user: may be «root» for local server («OpenServer»)',
 				'PASSWORD'=>'Mysql database user password: clicking on the label toggles the display',
-				'NAME_BD'=>'MySQL database name: can be created with sufficient database user rights, otherwise it must exist.'
+				'DB'=>'MySQL database name: can be created with sufficient database user rights, otherwise it must exist.',
+				'Domain'=>'Canonical domain'
 			);
 
 		}
@@ -116,7 +120,7 @@ echo
 			.'>'.$i.'<td><input name="'.$i.'" value="'.(is_array($v)?implode(', ',$v):$v).'"'
 				.($i=='PASSWORD'?' type="password" placeholder="PASSWORD" autocomplete="off"':'')
 				.($i=='geoLoc'?' type="checkbox"'.($v?' checked':''):'')
-				.(in_array($i,array('HOST','NAME_BD','USER'))?' required placeholder="'.$i.'"':'')
+				.(in_array($i,array('HOST','DB','USER'))?' required placeholder="'.$i.'"':'')
 			.'>';
 		}
 		echo '<tr><td><input type=reset style=width:100%>'

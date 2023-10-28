@@ -11,7 +11,7 @@ class DB{
 	}  
 	private  function __construct() {
 		global $Conf;
-		$this->connect = mysqli_connect($Conf['HOST'],$Conf['USER'],$Conf['PASSWORD'],$Conf['NAME_BD']) or exit('<p>'.mysqli_connect_error());
+		$this->connect = mysqli_connect($Conf['HOST'],$Conf['USER'],$Conf['PASSWORD'],$Conf['DB']) or exit('<p>'.mysqli_connect_error());
 		if (!mysqli_set_charset($this->connect, "utf8")){exit(mysqli_error($this->connect));}
 		mysqli_query($this->connect,'SET sql_mode = "NO_DIR_IN_CREATE"'); 
 	}
