@@ -95,7 +95,7 @@
 			exit('<p class=err>Table "files" has records: '.$row['c']);
 		}
 
-$q='SHOW FUNCTION status where db="'.$Conf['NAME_BD'].'" and name="transliterate_func"';
+$q='SHOW FUNCTION status where db="'.$Conf['DB'].'" and name="transliterate_func"';
 $r=DB::q($q);
 $n=DB::num_rows($r);
 //echo'<p>FUNCTION status = '.$n;
