@@ -3,13 +3,11 @@
 	<a href="/">
 		Logo
 	</a>
-	<h2>Footer</h2>
 </div>
+<div>Footer text</div>
 <a class="btn" onclick="ajx(event,'feedback',
 	textContent,0,
 	['jsAppend(\'feedback\',1)','window.feedTimer=window.setTimeout(\'document.querySelector(\\\'.feedback label>input\\\').focus()\',2000)']
 	)">
 	Зворотній зв'язок
 </a>
-
-<div style=clear:both></div>
