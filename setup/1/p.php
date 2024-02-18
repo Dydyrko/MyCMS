@@ -84,7 +84,7 @@ echo
 				'USER'=>'Пользователь базы данных MySQL: можеть быть «root» для локального сервера (например, «OpenServer»)',
 				'PASSWORD'=>'Пароль пользователя базы данных MySQL: нажатие на заголовок переключает отображение',
 				'DB'=>'Имя базы данных MySQL: можеть быть создана при достаточных правах пользователя базы данных, иначе — должна существовать.',
-				'Domain'=>'Каноническое доменное имя сайта (желательно указать при возможности других доменов: технического, для отладки…)'	//технический полезен при недоступности домена (на время продления…)
+				'Domain'=>'Каноническое доменное имя сайта (указать при возможности других доменов: технического, для отладки…)'	//технический полезен при недоступности домена (на время продления…)
 			);
 		}else if($lang=='uk'){
 			$T = array (
@@ -96,7 +96,7 @@ echo
 				'USER'=>'Користувач бази даних MySQL: може бути «root» для локального сервера (наприклад, «OpenServer»)',
 				'PASSWORD'=>'Пароль користувача бази даних MySQL: натискання на заголовок перемикає відображення',
 				'DB'=>'Ім\'я бази даних MySQL: може бути створена при достатніх правах користувача бази даних, інакше — має існувати.',
-				'Domain'=>'Canonical domain'
+				'Domain'=>'Canonical domain (вказати при можливості інших доменів: технічного, для налагодження…)'
 			);
 		}else{
 			$T=array(
@@ -108,7 +108,7 @@ echo
 				'USER'=>'MySQL database user: may be «root» for local server («OpenServer»)',
 				'PASSWORD'=>'Mysql database user password: clicking on the label toggles the display',
 				'DB'=>'MySQL database name: can be created with sufficient database user rights, otherwise it must exist.',
-				'Domain'=>'Canonical domain'
+				'Domain'=>'Canonical domain (indicate if possible other domains: technical, for debugging…)'
 			);
 
 		}
