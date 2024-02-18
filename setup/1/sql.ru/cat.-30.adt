@@ -1,30 +1,25 @@
 -100	0	10	header
 
+<a class=logo href="/">
+ <img src="/i/cat/-30/logo.svg" alt=logo>
+</a>
 <div class="menu">
-	<div class="container" style="padding:0 15px">
-		<span class=menuBtn>
-			<a onclick="var e=parentNode;
-				if(e.className!='menuBtn'){
-					e.className='menuBtn'
-				}else{
-					e.className='menuBtn a';
-					e=document.querySelector('.ii.a');
-					if(e){e.className='ii'}
-				}
-			"></a>
-			<div class=cat1>
-				<span class="noedit" data-t="langSwitch">{langSwitch}</span>
-				<span class="noedit" data-t="menu">{menu}</span>
-			</div>
-		</span>
+	<a class=menuBtn onclick="
+	 var e=parentNode;e.classList.toggle('a'),
+	 n=document.querySelector('main');
+	 if(e.classList.contains('a')){
+	 	 n.style.opacity=.1
+	 }else{
+	 	 n.style.opacity=1
+	 }
+	"></a>
+	<div>
+		<div class=cat1>
+			<span class="noedit" data-t="menu">{menu}</span>
+		</div>
 	</div>
+	<div class="noedit" id="headerDiv"></div>
+	<div class="noedit" data-t="langSwitch">{langSwitch}</div>
 </div>
-<div class="container">
-	<a href="/ru/" style="display:inline-block;line-height:40px">Logo</a>
-	<div style="float:right">
-		<div class="noedit" id="headerDiv"></div>
-	</div>
-	<a id="arrowUp" onclick="document.documentElement.scrollIntoView(
-		{behavior: 'smooth'}
-	)">&uarr;</a>
-</div>
+
+<a id="arrowUp" onclick="document.documentElement.scrollIntoView({behavior: 'smooth'})">&uarr;</a>
