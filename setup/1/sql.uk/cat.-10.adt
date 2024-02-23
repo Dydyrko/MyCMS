@@ -13,5 +13,5 @@
 		</div>
 		<div></div
 	></form>
-	<a {registration}">Реєстрація</a>
+	<a {registration}>Реєстрація</a>
 </div>
