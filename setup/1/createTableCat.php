@@ -29,6 +29,7 @@ $q='CREATE TABLE IF NOT EXISTS `cat` (
 	.'`d0` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "Create date",
 	  `d` datetime NULL COMMENT "Page date",
 	  `d1` datetime NULL COMMENT "event date",
+   	  `t` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
 	  `owner` int(11) NOT NULL COMMENT ""
 	) AUTO_INCREMENT=1';
 if(DB::q($q)){
