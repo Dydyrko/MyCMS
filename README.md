@@ -1,8 +1,9 @@
 # MyCMS
-<p>Tool for creating fast web systems: <a href="https://cms.chebros.com/en/" target="_blank">description</a>.
+<p>Tool for creating fast web systems: <a href="https://cms.supervision.com.ua/en/" target="_blank">description</a>.
 <p>Setup: place folder ("/setup") to hosting or local server ("OpenLiteSpeed" or "Apache").
 <hr>
-<p>Инструмент для создания быстрых веб-систем: <a href="https://cms.chebros.com/ru/" target="_blank">описание</a> (<a href="http://2298547.cheb2.web.hosting-test.net/ru/" target="_blank">техническая ссылка</a>).
+<p>Инструмент для создания быстрых веб-систем: <a href="https://cms.supervision.com.ua/ru/" target="_blank"
+>описание</a><!--(<a href="http://2298547.cheb2.web.hosting-test.net/ru/" target="_blank">техническая ссылка</a>)-->.
  <br><a href="https://github.com/Dydyrko/MyCMS/blob/main/setup/help.zip" target="_blank">Справочник</a> в ZIP-архиве — часть CMS.
 <p><b>Устрановка</b>: 
 <ul style="font-size:80%">
