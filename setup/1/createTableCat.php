@@ -24,7 +24,7 @@ $q='CREATE TABLE IF NOT EXISTS `cat` (
 	  `img` text NOT NULL,
 	  `vimg` tinyint(1) NOT NULL DEFAULT "0" COMMENT "Show img not in list only",
 	  `ord` int(11) NOT NULL,
-	  `v` smallint(6) NOT NULL DEFAULT "1" COMMENT "Public (visible on site): 0=no, 1=yes, 2=special status",'
+	  `v` smallint(6) NOT NULL DEFAULT "0" COMMENT "Public (visible on site): 0=no, 1=yes, 2=special status",'
 
 	.'`d0` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "Create date",
 	  `d` datetime NULL COMMENT "Page date",
